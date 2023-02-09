@@ -1,0 +1,30 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Estedad;
+  src: url(./assets/font/Estedad-Light.ttf);
+}
+* {
+  font-family: Estedad;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+li,
+ul {
+  list-style: none;
+}
+:root {
+  --darkGreen: #08a45c;
+  --lightGreen: #cde6db;
+  --darkBlue: #003379;
+  --lightBlue: #edecfd;
+  --blue: #007bff;
+}

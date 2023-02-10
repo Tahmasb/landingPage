@@ -3,13 +3,14 @@
   border-radius: 18px;
   background-color: var(--gray);
   background-repeat: repeat-x;
-  background-position: 0 800%;
-  transition: background-position 0.8s ease;
+  background-position: 0 -800%;
+  transition: background-position 1s ease;
 }
 .service-item:hover {
   background-image: url(./../../assets/img/wave.svg);
   background-position: bottom left;
   cursor: pointer;
+  background-size: 200%;
 }
 .item-icon {
   color: var(--darkGreen);

@@ -10,33 +10,50 @@ let blogs = [
 ]
 export default function Blog() {
   return (
-    <Grid id="blog">
-      <Typography>آخرین اخبار ما</Typography>
-      <Typography variant="h4">وبلاگ ما</Typography>
-      <Typography>
-        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ{" "}
-      </Typography>
+    <Grid id="blog" p="4vw" my={9} bgcolor="var(--lightGray)">
+      <Grid m={3}>
+        <Typography>آخرین اخبار ما</Typography>
+        <Typography
+          my={2}
+          fontFamily="EstedadBold"
+          color="var(--darkBlue)"
+          variant="h4"
+        >
+          وبلاگ ما
+        </Typography>
+        <Typography>
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ{" "}
+        </Typography>
+      </Grid>
       <Grid container display="flex" justifyContent="center">
         {blogs.map((blog, index) => {
           return (
             <Grid key={index} className={styles.blogItem} m={2}>
-              <CardMedia
-                lg={3}
-                md={5}
-                sm={5.5}
-                xs={11}
-                src={blog.img}
-                alt={blog.category}
-                component={"img"}
-                className={styles.blogImg}
-              />
+              <Grid style={{ overflow: "hidden" }}>
+                <CardMedia
+                  sx={{ maxWidth: { lg: "24em", xs: "40em" } }}
+                  lg={3}
+                  md={5}
+                  xs={11}
+                  src={blog.img}
+                  alt={blog.category}
+                  component={"img"}
+                  className={styles.blogImg}
+                />
+              </Grid>
               <Grid px={3} className={styles.blogItemCaption}>
-                <Typography pt={1} variant="h6">
+                <Typography
+                  color={"var(--darkBlue)"}
+                  fontFamily={"EstedadBold"}
+                  py={1}
+                >
                   لورم ایپسوم متن ساختگی
                 </Typography>
-                <Grid p={1.4} display="flex" justifyContent="space-between">
+                <Grid py={1.4} display="flex" justifyContent="space-between">
                   <button className={styles.blogButton}>۱۳۹۹-۳-۲۲</button>
-                  <button className={styles.blogButton}>{blog.category}</button>
+                  <button className={styles.blogButton2}>
+                    {blog.category}
+                  </button>
                 </Grid>
               </Grid>
             </Grid>

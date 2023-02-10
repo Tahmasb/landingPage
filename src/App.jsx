@@ -1,12 +1,12 @@
 import { CacheProvider } from "@emotion/react"
 import { ThemeProvider } from "@emotion/react"
-import Main from "./pages/Main/Main"
+import MainPage from "./pages/MainPage/MainPage"
 import { theme, cacheRTL } from "./theme/theme"
 function App() {
   return (
     <CacheProvider value={cacheRTL}>
       <ThemeProvider theme={theme}>
-        <Main />
+        <MainPage />
       </ThemeProvider>
     </CacheProvider>
   )

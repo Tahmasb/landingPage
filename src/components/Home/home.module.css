@@ -1,0 +1,18 @@
+.home {
+  display: flex;
+  padding-left: 11vw;
+  padding-right: 11vw;
+  margin-top: -140px;
+}
+.home-child1 {
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 15vh;
+}
+.home-title {
+  color: var(--darkBlue);
+  font-family: "EstedadBold" !important;
+}
+.home-button-parent {
+  display: flex;
+}

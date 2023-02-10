@@ -1,14 +1,24 @@
-.header-parent {
-  display: flex;
-  justify-content: space-around;
+.header {
   background-image: url(./../../assets/img/header-bg.svg);
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 30px 50px;
+  padding: 30px 4vw;
   min-height: 300px;
 }
+.header-parent {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: auto;
+  row-gap: 4px;
+  left: 0;
+  right: 0;
+}
 .header-item {
-  height: 2.5em;
+  padding: 0.3rem;
+}
+.header-logo {
+  width: 150px;
 }
 .header-item a {
   color: black;
@@ -19,6 +29,16 @@
 .header-call {
   background-color: var(--darkGreen);
   color: white;
-  padding: 8px 30px;
+  padding: 6px 30px;
   border-radius: 40px;
+}
+.header-call:hover {
+  background-color: #20c997;
+}
+.menu-grid {
+  font-size: x-large;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }

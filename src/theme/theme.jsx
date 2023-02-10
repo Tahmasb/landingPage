@@ -5,6 +5,9 @@ import createCache from "@emotion/cache"
 import { prefixer } from "stylis"
 export const theme = createTheme({
   direction: "rtl",
+  typography: {
+    fontFamily: "Estedad",
+  },
   components: {
     MuiLink: {
       styleOverrides: {

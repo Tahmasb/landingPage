@@ -1,6 +1,6 @@
 import { CacheProvider } from "@emotion/react"
 import { ThemeProvider } from "@emotion/react"
-import Main from "./pages/main/main"
+import Main from "./pages/Main/Main"
 import { theme, cacheRTL } from "./theme/theme"
 function App() {
   return (

@@ -2,7 +2,7 @@ import logo from "./../../assets/img/logo2.png"
 import styles from "./header.module.css"
 import { styled } from "@mui/material/styles"
 import { BsGrid } from "react-icons/bs"
-import { Grid, useMediaQuery } from "@mui/material"
+import { Grid, Typography, useMediaQuery } from "@mui/material"
 import React from "react"
 export default function Header() {
   const [showMenu, setShowMenu] = React.useState(false)
@@ -13,9 +13,9 @@ export default function Header() {
       display="flex"
       justifyContent="space-between"
     >
-      <div>
-        <img className={styles.headerLogo} src={logo} alt="logo" />
-      </div>
+      <Typography color={"var(--darkBlue)"} variant="h6" whiteSpace={"nowrap"}>
+        شرکت فلان‌‌‌‌‌‌
+      </Typography>
       <Grid
         onClick={() => setShowMenu(!showMenu)}
         className={styles.menuGrid}
@@ -30,7 +30,7 @@ export default function Header() {
             bgcolor: { xs: "var(--white)", md: "transparent" },
             mt: { xs: "40px", md: "0px" },
             position: { xs: "absolute", md: "static" },
-            width: { xs: "100%", sm: "80%", md: "100%" },
+            width: { xs: "100%", sm: "80%" },
             p: { xs: "10px", md: "0px" },
           }}
           className={styles.headerParent}

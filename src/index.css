@@ -35,6 +35,7 @@ button {
   --darkBlue: #003379;
   --lightBlue: #edecfd;
   --blue: #007bff;
+  --borderBlue: #5d8b9e;
   --white: white;
   --gray: #f3f3f3;
   --lightGray: #fbfbfb;
@@ -51,4 +52,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.home-button:hover {
+  background-color: var(--darkBlue);
 }

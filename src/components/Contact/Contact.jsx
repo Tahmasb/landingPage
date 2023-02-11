@@ -1,7 +1,20 @@
 import { CardMedia, Grid, Typography } from "@mui/material"
 import styles from "./contact.module.css"
+import { useFormik } from "formik"
 import contact from "./../../assets/img/contact.svg"
 export default function Contact() {
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      phone: "",
+      email: "",
+      message: "",
+    },
+    onSubmit: (values, { resetForm }) => {
+      alert(JSON.stringify(values))
+      resetForm()
+    },
+  })
   return (
     <Grid
       id="contact"
@@ -23,37 +36,46 @@ export default function Contact() {
         className={styles.contactForm}
         sx={{ m: { xs: 0, sm: 9, md: 2, lg: 12 } }}
       >
-        <label htmlFor="name">نام</label>
+        <label htmlFor="firstName">نام</label>
         <input
+          id="firstName"
           autoComplete="off"
-          id="name"
+          {...formik.getFieldProps("firstName")}
           className={styles.contactInput}
           type="text"
         />
 
         <label htmlFor="phone">شماره تماس</label>
         <input
-          autoComplete="off"
           id="phone"
+          autoComplete="off"
+          {...formik.getFieldProps("phone")}
           className={styles.contactInput}
           type="text"
         />
         <label htmlFor="email">ایمیل</label>
         <input
-          autoComplete="off"
           id="email"
+          {...formik.getFieldProps("email")}
+          autoComplete="off"
           className={styles.contactInput}
           type="text"
         />
         <label htmlFor="message">پیام</label>
         <textarea
+          id="message"
+          {...formik.getFieldProps("message")}
           autoComplete="off"
           className={styles.contactInput}
-          name=""
-          id="message"
           rows="5"
         ></textarea>
-        <button className={`${styles.formButton} home-button`}>ارسال</button>
+        <button
+          type="submit"
+          onClick={formik.handleSubmit}
+          className={`${styles.formButton} home-button`}
+        >
+          ارسال
+        </button>
       </Grid>
       <Grid m="auto" flex={1}>
         <Typography

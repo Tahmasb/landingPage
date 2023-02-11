@@ -20,10 +20,14 @@
   white-space: nowrap;
   margin-left: 25px;
   text-align: center;
-  color: var(--darkBlue);
-  border: 1px solid var(--darkBlue);
+  color: var(--borderBlue);
+  border: 2px solid var(--borderBlue);
   border-radius: 30px;
   font-size: 17px;
   display: flex;
   align-items: center;
+}
+.button-no-active:hover {
+  border: 2px solid var(--darkBlue);
+  color: var(--darkBlue);
 }

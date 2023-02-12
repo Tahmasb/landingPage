@@ -27,3 +27,8 @@ textarea {
   width: 100px;
   margin-top: 25px;
 }
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin: 2px;
+}

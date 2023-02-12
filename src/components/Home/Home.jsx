@@ -29,14 +29,14 @@ export default function Home() {
           sx={{ justifyContent: { xs: "center", md: "start" } }}
           className={styles.homeButtonParent}
         >
-          <button className="home-button">
+          <a href="#contact" className="home-button">
             <AiOutlineSetting style={{ marginLeft: "6px" }} />
             خدمات ما
-          </button>
-          <button className="home-button">
+          </a>
+          <a href="#contact" className="home-button">
             <BsArrowLeftShort style={{ marginLeft: "6px" }} />
             تماس با ما
-          </button>
+          </a>
         </Grid>
       </Grid>
       <Grid flex={1}>

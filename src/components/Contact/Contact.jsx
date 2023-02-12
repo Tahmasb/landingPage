@@ -2,6 +2,7 @@ import { CardMedia, Grid, Typography } from "@mui/material"
 import styles from "./contact.module.css"
 import { useFormik } from "formik"
 import contact from "./../../assets/img/contact.svg"
+import * as Yup from "yup"
 export default function Contact() {
   const formik = useFormik({
     initialValues: {
@@ -14,6 +15,16 @@ export default function Contact() {
       alert(JSON.stringify(values))
       resetForm()
     },
+    validationSchema: Yup.object({
+      firstName: Yup.string("").min(3, "حداقل سه کاراکتر").required("ضروری"),
+      phone: Yup.number()
+        .typeError("باید عدد وارد کنید")
+        .min(1111111111, "شماره معتبر نیست")
+        .max(9999999999, "شماره معتبر نیست")
+        .required("ضروری"),
+      email: Yup.string("").email("ایمیل معتبر نیست").required("ضروری"),
+      message: Yup.string("").min(12, "حداقل دوازده کاراکتر").required("ضروری"),
+    }),
   })
   return (
     <Grid
@@ -44,7 +55,9 @@ export default function Contact() {
           className={styles.contactInput}
           type="text"
         />
-
+        {formik.touched.firstName && formik.errors.firstName ? (
+          <p className={styles.errorMessage}>{formik.errors.firstName}</p>
+        ) : null}
         <label htmlFor="phone">شماره تماس</label>
         <input
           id="phone"
@@ -53,6 +66,9 @@ export default function Contact() {
           className={styles.contactInput}
           type="text"
         />
+        {formik.touched.phone && formik.errors.phone ? (
+          <p className={styles.errorMessage}>{formik.errors.phone}</p>
+        ) : null}
         <label htmlFor="email">ایمیل</label>
         <input
           id="email"
@@ -61,6 +77,9 @@ export default function Contact() {
           className={styles.contactInput}
           type="text"
         />
+        {formik.touched.email && formik.errors.email ? (
+          <p className={styles.errorMessage}>{formik.errors.email}</p>
+        ) : null}
         <label htmlFor="message">پیام</label>
         <textarea
           id="message"
@@ -68,7 +87,10 @@ export default function Contact() {
           autoComplete="off"
           className={styles.contactInput}
           rows="5"
-        ></textarea>
+        />
+        {formik.touched.message && formik.errors.message ? (
+          <p className={styles.errorMessage}>{formik.errors.message}</p>
+        ) : null}
         <button
           type="submit"
           onClick={formik.handleSubmit}

@@ -1,10 +1,56 @@
-import logo from "./../../assets/img/logo2.png"
 import styles from "./header.module.css"
 import { styled } from "@mui/material/styles"
 import { BsGrid } from "react-icons/bs"
 import { Grid, Typography, useMediaQuery } from "@mui/material"
 import React from "react"
 export default function Header() {
+  // theme change
+  const themes = {
+    light: {
+      darkGreen: "#08a45c",
+      lightGreen: "#cde6db",
+      hoverGreen: "#20c997",
+      darkBlue: "#003379",
+      lightBlue: "#edecfd",
+      blue: "#007bff",
+      borderBlue: "#5d8b9e",
+      white: "#FFFFFF",
+      gray: "#f3f3f3",
+      lightGray: "#fbfbfb",
+      dark: "#000000",
+    },
+    dark: {
+      darkGreen: "#FB2D19",
+      lightGreen: "#F8B094",
+      hoverGreen: "#EDBD7E",
+      darkBlue: "#3E8224",
+      lightBlue: "#82ED43",
+      blue: "#43EDE2",
+      borderBlue: "#62C4EF",
+      white: "#000000",
+      gray: "#DDDDD8",
+      lightGray: "#C198D6",
+      dark: "#FFFFFF",
+    },
+  }
+  const [currentThem, setCurrentThem] = React.useState("light")
+  const themFunc = () => {
+    const theme = themes[currentThem]
+    Object.keys(theme).forEach((key) => {
+      const cssKey = `--${key}`
+      const cssValue = theme[key]
+      document.body.style.setProperty(cssKey, cssValue)
+    })
+  }
+  const toggleTheme = () => {
+    if (currentThem === "light") {
+      setCurrentThem("dark")
+      themFunc()
+    } else {
+      setCurrentThem("light")
+      themFunc()
+    }
+  }
   const [showMenu, setShowMenu] = React.useState(false)
   let pageSize = useMediaQuery("(min-width:900px)")
   return (

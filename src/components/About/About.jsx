@@ -14,7 +14,7 @@ export default function About() {
           />
         </Grid>
         <Grid flex={1}>
-          <Typography>درباره ویستا</Typography>
+          <Typography>درباره شرکت</Typography>
           <Typography
             fontFamily={"EstedadBold"}
             color={"var(--darkBlue)"}

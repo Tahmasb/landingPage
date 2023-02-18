@@ -1,5 +1,4 @@
 import styles from "./header.module.css"
-import { styled } from "@mui/material/styles"
 import { BsGrid } from "react-icons/bs"
 import { Grid, Typography, useMediaQuery } from "@mui/material"
 import React from "react"
@@ -71,6 +70,7 @@ export default function Header() {
       </Grid>
       {pageSize || showMenu ? (
         <Grid
+          // onClick={() => setShowMenu(!showMenu)}
           sx={{
             flexDirection: { xs: "column", md: "row" },
             bgcolor: { xs: "var(--white)", md: "transparent" },

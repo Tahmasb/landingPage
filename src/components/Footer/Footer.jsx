@@ -18,7 +18,15 @@ export default function Footer() {
           از طراحان گرافیک است
         </Typography>
       </Grid>
-      <Grid item lg={3} xs={11} sm={6} mb={4} className={styles.footerItem}>
+      <Grid
+        sx={{ pl: { xs: 0, sm: 4, md: 8 } }}
+        item
+        lg={3}
+        xs={11}
+        sm={6}
+        mb={4}
+        className={styles.footerItem}
+      >
         <Typography variant="h6" fontFamily={"EstedadBold"} mb={2}>
           دسترسی سریع
         </Typography>
@@ -51,7 +59,15 @@ export default function Footer() {
           </a>
         </Typography>
       </Grid>
-      <Grid item lg={3} xs={11} sm={6} mb={4} className={styles.footerItem}>
+      <Grid
+        sx={{ pl: { xs: 0, sm: 4, md: 8 } }}
+        item
+        lg={3}
+        xs={11}
+        sm={6}
+        mb={4}
+        className={styles.footerItem}
+      >
         <Typography variant="h6" fontFamily={"EstedadBold"} mb={2}>
           شبکه‌های اجتمائی
         </Typography>

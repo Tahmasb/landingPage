@@ -17,10 +17,9 @@ export default function Contact() {
     },
     validationSchema: Yup.object({
       firstName: Yup.string("").min(3, "حداقل سه کاراکتر").required("ضروری"),
-      phone: Yup.number()
-        .typeError("باید عدد وارد کنید")
-        .min(1111111111, "شماره معتبر نیست")
-        .max(9999999999, "شماره معتبر نیست")
+      phone: Yup.string("")
+        .min(11, "شماره معتبر نیست")
+        .max(11, "شماره معتبر نیست")
         .required("ضروری"),
       email: Yup.string("").email("ایمیل معتبر نیست").required("ضروری"),
       message: Yup.string("").min(12, "حداقل دوازده کاراکتر").required("ضروری"),

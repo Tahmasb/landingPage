@@ -7,6 +7,7 @@ import Home from "../../components/Home/Home"
 import Pricing from "../../components/Pricing/Pricing"
 import Services from "../../components/Services/Services"
 import Footer from "../../components/Footer/Footer"
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop"
 export default function MainPage() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function MainPage() {
       <Comment />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

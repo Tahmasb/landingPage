@@ -17,10 +17,16 @@ export default function Home() {
         flex={1}
         className={styles.homeChild1}
       >
-        <Typography my={4} className={styles.homeTitle} variant="h3">
+        <Typography
+          sx={{ textAlign: { xs: "center", md: "start" } }}
+          my={4}
+          className={styles.homeTitle}
+          variant="h3"
+          lineHeight={"8vh"}
+        >
           سایت فروش اشتراک فلان محصول
         </Typography>
-        <Typography my={3}>
+        <Typography my={4}>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
           صنعت چاپ و با استفاده از طراحان گرافیک است
